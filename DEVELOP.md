@@ -41,39 +41,13 @@ Run `npm install` to install the npm dependencies.
 Our [`package.json`](package.json) houses a collection of [run-scripts] that we use to maintain, test, build, and publish Cavilha CSS. Run `npm run <script>` with any of the following values for `<script>`:
 
 * `fresh` does a "fresh" npm install (like `npm install -f`)
+* `clean` clear distribution folder.
 * `dist` runs `script/dist`, which creates CSS bundles of all the `cavilha.sass` and `cavilha.dark.sass` files in `sass/`.
-* `sass-build-autoprefix` used by `dist` to use `postcss` to manage `sass` files.
-* `sass-build-cleancss` used by `dist` to use `cleancss` to manage `sass` files.
-* `sass-build-clean` used by `dist` to clear `css` files.
-* `sass-build-sass` used by `dist` to use `node-sass` to compile `sass` files inside `sass` folder.themes.
 * `linter` lints both our SCSS and JavaScript source files.
 * `start` generat bundle of css in runtime (alias: `dev`).
-* `watch:light` generat bundle of css in runtime about light `default` theme (alias: `dev`).
-* `watch:dark` generat bundle of css in runtime about dark theme.
 
 The above list may not always be up-to-date. You can list all of the available scripts by calling `npm run` with no other arguments.
 
-[@madeiramadeira/css]: https://www.npmjs.com/package/@cavilha-ui/css
+[@cavilha-ui/css]: https://www.npmjs.com/package/@cavilha-ui/css
 [run-scripts]: https://docs.npmjs.com/cli/run-script
 [npm]: https://www.npmjs.com/
-
-# Author
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/williamnvk">
-        <img src="https://avatars0.githubusercontent.com/u/2616847?v=4" width="100px;" alt="William Novak"/>
-        <br />
-        <sub><b>William Novak</b></sub>
-      </a>
-    </td>
-  </tr>
-</table>
-
-<!-- markdownlint-enable -->
-<!-- prettier-ignore-end -->
-<!-- ALL-CONTRIBUTORS-LIST:END -->

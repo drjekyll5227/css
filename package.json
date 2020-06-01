@@ -4,15 +4,16 @@
   "description": "Cavilha is an UI KIT created by MadeiraMadeira https://madeiramadeira.com.br/",
   "homepage": "https://github.com/cavilha-ui/css#readme",
   "private": false,
-  "sass": "sass/cavilha-ui.sass",
-  "main": "sass/cavilha-ui.sass",
+  "sass": "cavilha-ui.sass",
+  "main": "cavilha-ui.sass",
   "unpkg": "cavilha-ui/css/cavilha-ui.css",
   "style": "cavilha-ui/css/cavilha-ui.min.css",
   "scripts": {
     "fresh": "rm -rf node_modules && rm -rf packages-lock.json && yarn.lock && npm install",
-    "clean": "rimraf css",
+    "clean": "rimraf dist",
     "linter": "sass-lint -c .sass-lint.yml 'sass/**/*.sass' -v -q",
     "start": "node ./scripts/watch.js",
+    "dev": "npm run start",
     "dist": "node ./scripts/dist.js"
   },
   "devDependencies": {
@@ -47,6 +48,7 @@
   "files": [
     "css",
     "sass",
+    "cavilha-ui.sass",
     "lICENSE",
     "README.md"
   ],

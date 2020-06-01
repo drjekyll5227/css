@@ -24,12 +24,12 @@ console.log(color, `1/4 Cleaning dev folder
 --------------------------------------------------`)
 console.log(color, `2/4 Generating dev/cavilha-ui.css
 --------------------------------------------------`)
-execSync(`sass sass/cavilha-ui.${theme}.sass:dev/cavilha-ui.css`, encoding);
+execSync(`sass sass/${theme}.sass:dev/cavilha-ui.css`, encoding);
 console.log(color, `3/4 Prefixing dev/cavilha-ui.css
 --------------------------------------------------`)
 execSync(`postcss --use=autoprefixer --map false --output dev/cavilha-ui.css dev/cavilha-ui.css`, encoding);
-console.log(color, `4/4 Watching sass/cavilha-ui.${theme}.sass
+console.log(color, `4/4 Watching sass/${theme}.sass
 
-Press CMD + C or Ctrl + C to cancel this process
+Press CMD + C or Ctrl + C to cancel this process.
 ==================================================`)
-execSync(`sass --watch sass/cavilha-ui.${theme}.sass:dev/cavilha-ui.css`, encoding);
+console.log(execSync(`sass --watch sass/${theme}.sass:dev/cavilha-ui.css`, encoding));

@@ -12,23 +12,22 @@ CAVILHA UI 'dist' task running
 
 --------------------------------------------------`)
 
-
-var cleanFolder = readline.question("Clear `css` folder? (y/n): ");
+var cleanFolder = readline.question('Clear `dist` folder? (y/n): ');
 
 if (cleanFolder !== 'n') {
   execSync('npm run clean', encoding);
 }
 
-let files = ['cavilha-ui', 'cavilha-ui.dark'];
+let files = ['light', 'dark'];
 
 files.map(function(file, index){
   try {
     console.log(color, `${index + 1}/${files.length} Generating css/${file} files
   --------------------------------------------------`)
-    execSync(`sass sass/${file}.sass:css/${file}.css`, encoding);
-    execSync(`sass sass/${file}.sass:css/${file}.min.css --style compressed`, encoding);
-    execSync(`postcss --use=autoprefixer --map false --output css/${file}.css css/${file}.css`, encoding);
-    execSync(`postcss --use=autoprefixer --map false --output css/${file}.min.css css/${file}.min.css`, encoding);
+    execSync(`sass --no-source-map sass/${file}.sass:dist/themes/${file}.css`, encoding);
+    execSync(`sass --no-source-map sass/${file}.sass:dist/themes/${file}.min.css --style compressed`, encoding);
+    execSync(`postcss --use=autoprefixer --map false --output dist/themes/${file}.css dist/themes/${file}.css`, encoding);
+    execSync(`postcss --use=autoprefixer --map false --output dist/themes/${file}.min.css dist/themes/${file}.min.css`, encoding);
   } catch (e) {
     //
   }
