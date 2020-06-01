@@ -1,0 +1,249 @@
+/* Gap/padding helpers
+ * @description  Create a padding .helper classnames
+ * @package      helpers
+ * @version      1.0.0
+ * @lastupdate   28 May 2020 */
+
+@use '../variables/_size' as size
+@use '../utilities/_mixins' as mixins
+
+.helper
+  &--has-no-gap
+    padding: size.$zero
+
+    &-left
+      padding-left: size.$zero
+
+    &-right
+      padding-right: size.$zero
+
+    &-top
+      padding-top: size.$zero
+
+    &-bottom
+      padding-bottom: size.$zero
+
+    &-vertical
+      padding-bottom: size.$zero
+      padding-top: size.$zero
+
+    &-horizontal
+      padding-left: size.$zero
+      padding-right: size.$zero
+
+  &--has-gap
+    padding: size.$regular
+
+    &-fix
+      display: inline-block
+      width: 100%
+
+    &-left
+      padding-left: size.$regular
+
+    &-right
+      padding-right: size.$regular
+
+    &-top
+      padding-top: size.$regular
+
+    &-bottom
+      padding-bottom: size.$regular
+
+    &-vertical
+      padding-bottom: size.$regular
+      padding-top: size.$regular
+
+      &-extra-small
+        padding-bottom: size.$extra-small
+        padding-top: size.$extra-small
+
+      &-small
+        padding-bottom: size.$small
+        padding-top: size.$small
+
+      &-large
+        padding-bottom: size.$large
+        padding-top: size.$large
+
+      &-extra-large
+        padding-bottom: size.$extra-large
+        padding-top: size.$extra-large
+
+    &-horizontal
+      padding-left: size.$regular
+      padding-right: size.$regular
+
+      &-extra-small
+        padding-left: size.$extra-small
+        padding-right: size.$extra-small
+
+      &-small
+        padding-left: size.$small
+        padding-right: size.$small
+
+      &-large
+        padding-left: size.$large
+        padding-right: size.$large
+
+      &-extra-large
+        padding-left: size.$extra-large
+        padding-right: size.$extra-large
+
+  @include mixins.tablet
+    &--has-no-gap
+      &-tablet
+        padding: size.$zero
+
+      &-left-tablet
+        padding-left: size.$zero
+
+      &-right-tablet
+        padding-right: size.$zero
+
+      &-top-tablet
+        padding-top: size.$zero
+
+      &-bottom-tablet
+        padding-bottom: size.$zero
+
+      &-vertical-tablet
+        padding-bottom: size.$zero
+        padding-top: size.$zero
+
+      &-horizontal-tablet
+        padding-left: size.$zero
+        padding-right: size.$zero
+
+    &--has-gap
+      &-tablet
+        padding: size.$regular
+
+      &-left-tablet
+        padding-left: size.$regular
+
+      &-right-tablet
+        padding-right: size.$regular
+
+      &-top-tablet
+        padding-top: size.$regular
+
+      &-bottom-tablet
+        padding-bottom: size.$regular
+
+      &-vertical
+        &-extra-small-tablet
+          padding-bottom: size.$extra-small
+          padding-top: size.$extra-small
+
+        &-small-tablet
+          padding-bottom: size.$small
+          padding-top: size.$small
+
+        &-large-tablet
+          padding-bottom: size.$large
+          padding-top: size.$large
+
+        &-extra-large-tablet
+          padding-bottom: size.$extra-large
+          padding-top: size.$extra-large
+
+      &-horizontal
+        &-extra-small-tablet
+          padding-left: size.$extra-small
+          padding-right: size.$extra-small
+
+        &-small-tablet
+          padding-left: size.$small
+          padding-right: size.$small
+
+        &-large-tablet
+          padding-left: size.$large
+          padding-right: size.$large
+
+        &-extra-large-tablet
+          padding-left: size.$extra-large
+          padding-right: size.$extra-large
+
+  @include mixins.mobile
+    &--has-no-gap
+      &-mobile
+        padding: size.$zero
+
+      &-left-mobile
+        padding-left: size.$zero
+
+      &-right-mobile
+        padding-right: size.$zero
+
+      &-top-mobile
+        padding-top: size.$zero
+
+      &-bottom-mobile
+        padding-bottom: size.$zero
+
+      &-vertical-mobile
+        padding-bottom: size.$zero
+        padding-top: size.$zero
+
+      &-horizontal-mobile
+        padding-left: size.$zero
+        padding-right: size.$zero
+
+    &--has-gap
+      &-mobile
+        padding: size.$regular
+
+      &-left-mobile
+        padding-left: size.$regular
+
+      &-right-mobile
+        padding-right: size.$regular
+
+      &-top-mobile
+        padding-top: size.$regular
+
+      &-bottom-mobile
+        padding-bottom: size.$regular
+
+      &-vertical
+        &-mobile
+          padding-bottom: size.$regular
+          padding-top: size.$regular
+
+        &-extra-small-mobile
+          padding-bottom: size.$extra-small
+          padding-top: size.$extra-small
+
+        &-small-mobile
+          padding-bottom: size.$small
+          padding-top: size.$small
+
+        &-large-mobile
+          padding-bottom: size.$large
+          padding-top: size.$large
+
+        &-extra-large-mobile
+          padding-bottom: size.$extra-large
+          padding-top: size.$extra-large
+
+      &-horizontal
+        &-mobile
+          padding-left: size.$regular
+          padding-right: size.$regular
+
+        &-extra-small-mobile
+          padding-left: size.$extra-small
+          padding-right: size.$extra-small
+
+        &-small-mobile
+          padding-left: size.$small
+          padding-right: size.$small
+
+        &-large-mobile
+          padding-left: size.$large
+          padding-right: size.$large
+
+        &-extra-large-mobile
+          padding-left: size.$extra-large
+          padding-right: size.$extra-large

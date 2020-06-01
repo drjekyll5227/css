@@ -1,0 +1,55 @@
+@use '../../variables/_size' as size
+
+.alert
+  $self: &
+  align-items: center
+  background-color: map-get($alert-background, default)
+  border-radius: $alert-border-radius
+  color: map-get($alert-color, default)
+  cursor: default
+  display: flex
+  flex-direction: row
+  justify-content: center
+  margin: $alert-margin
+  padding: $alert-gap
+  position: relative
+  transition: $alert-transition
+
+  + #{$self}
+    margin-top: $alert-nesting-margin-top
+
+  &:hover
+    background-color: map-get($alert-background-hover, default)
+    border-color: map-get($alert-background-hover, default)
+    text-decoration: none
+
+  #{$self}__content // p or span
+    flex: 1
+
+  #{$self}__icon
+    font-size: 20px
+    line-height: 1
+    width: 40px
+
+  #{$self}__close
+    background-color: transparent
+    border-width: size.$zero
+    box-shadow: none
+    content: '×'
+    cursor: pointer
+    font-size: 20px
+    font-weight: 600
+    line-height: 1
+    margin: size.$zero size.$zero size.$zero size.$regular
+    outline: none
+    padding: size.$zero
+
+  @each $color, $value in $alert-background
+    &#{$self}--is-#{ $color }
+      background-color: $value
+      border-color: map-get($alert-border, $color)
+      color: map-get($alert-color, $color)
+
+      &:hover
+        background-color: map-get($alert-background-hover, $color)
+        border-color: map-get($alert-background-hover, $color)

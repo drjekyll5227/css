@@ -1,0 +1,35 @@
+@use '../../utilities/_mixins' as mixins
+@use '../../variables/_size' as size
+
+.container
+  $self: &
+  height: 100%
+  margin: size.$zero auto
+  padding: size.$zero
+  width: 100%
+
+  &#{$self}--has-sidebar
+    display: flex
+    flex-direction: row
+    overflow: hidden
+
+    > main
+      flex: 1 1
+      height: max-content
+
+  @include mixins.mobile
+    max-width: $container-mobile
+
+  @include mixins.tablet-portrait
+    max-width: $container-tablet-portrait
+
+  @include mixins.tablet-landscape
+    max-width: $container-tablet-landscape
+
+  @include mixins.desktop
+    max-width: $container-desktop
+
+  &#{$self}--is-full-width
+    max-width: 100%
+
+

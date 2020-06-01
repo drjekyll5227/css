@@ -1,0 +1,26 @@
+/* Shadow helpers
+ * @description  Create a shadow .helper classnames
+ * @package      helpers
+ * @version      1.0.0
+ * @lastupdate   28 May 2020 */
+
+@use '../utilities/_mixins' as mixins
+
+.helper
+  &--has-no-shadow
+    box-shadow: none !important // sass-lint:disable-line no-important
+
+  &--has-shadow-extra-small
+    @include mixins.shadow-extra-small
+
+  &--has-shadow-small
+    @include mixins.shadow-small
+
+  &--has-shadow
+    @include mixins.shadow
+
+  &--has-shadow-large
+    @include mixins.shadow-large
+
+  &--has-shadow-extra-large
+    @include mixins.shadow-extra-large

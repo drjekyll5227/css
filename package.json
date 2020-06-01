@@ -1,0 +1,61 @@
+{
+  "name": "@cavilha-ui/css",
+  "version": "0.1.0",
+  "description": "Cavilha is an UI KIT created by MadeiraMadeira https://madeiramadeira.com.br/",
+  "homepage": "https://github.com/cavilha-ui/css#readme",
+  "private": false,
+  "sass": "sass/cavilha-ui.sass",
+  "main": "sass/cavilha-ui.sass",
+  "unpkg": "cavilha-ui/css/cavilha-ui.css",
+  "style": "cavilha-ui/css/cavilha-ui.min.css",
+  "scripts": {
+    "fresh": "rm -rf node_modules && rm -rf packages-lock.json && yarn.lock && npm install",
+    "clean": "rimraf css",
+    "linter": "sass-lint -c .sass-lint.yml 'sass/**/*.sass' -v -q",
+    "start": "node ./scripts/watch.js",
+    "dist": "node ./scripts/dist.js"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.7.4",
+    "cssnano": "^4.1.10",
+    "eslint": "^6.8.0",
+    "postcss-cli": "^7.1.0",
+    "readline-sync": "^1.4.10",
+    "rimraf": "^3.0.2",
+    "sass-lint": "^1.13.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cavilha-ui/css.git"
+  },
+  "keywords": [
+    "sass",
+    "css",
+    "ui",
+    "design system",
+    "ui kit"
+  ],
+  "author": {
+    "name": "William Novak",
+    "email": "williamnvk@gmail.com",
+    "url": "https://github.com/williamnvk"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cavilha-ui/css/issues"
+  },
+  "files": [
+    "css",
+    "sass",
+    "lICENSE",
+    "README.md"
+  ],
+  "dependencies": {
+    "sass": "^1.26.7"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "ie 10"
+  ]
+}

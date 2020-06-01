@@ -1,0 +1,117 @@
+@use '../variables/_breakpoint' as breakpoint
+
+=clearfix
+  &::after
+    clear: both
+    content: ' '
+    display: table
+
+=border-box
+  box-sizing: border-box !important // sass-lint:disable-line no-important
+
+=unselectable
+  -khtml-user-select: none // sass-lint:disable-line no-vendor-prefixes no-misspelled-properties
+  -moz-user-select: none // sass-lint:disable-line no-vendor-prefixes
+  -ms-user-select: none // sass-lint:disable-line no-vendor-prefixes
+  -webkit-touch-callout: none // sass-lint:disable-line no-vendor-prefixes
+  -webkit-user-select: none // sass-lint:disable-line no-vendor-prefixes
+  user-select: none
+
+=shadow-extra-small
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .4), 0 1px 1px rgba(0, 0, 0, .24)
+
+=shadow-small
+  box-shadow: 0 2px 2px rgba(0, 0, 0, .24), 0 0 2px rgba(0, 0, 0, .12)
+
+=shadow
+  box-shadow: 0 2px 2px rgba(0, 0, 0, .24), 0 0 2px rgba(0, 0, 0, .24)
+
+=shadow-large
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .12)
+
+=shadow-extra-large
+  box-shadow: 0 8px 12px rgba(0, 0, 0, .12)
+
+
+%unselectable
+  +unselectable
+
+=optional-at-root($sel)
+  @at-root #{if(not &, $sel, selector-append(&, $sel))}
+    @content
+
+=placeholder
+  +optional-at-root('::-webkit-input-placeholder')
+    @content
+
+  +optional-at-root(':-moz-placeholder')
+    @content
+
+  +optional-at-root('::-moz-placeholder')
+    @content
+
+  +optional-at-root(':-ms-input-placeholder')
+    @content
+
+=media-query($range)
+  @if $range == mobile
+    @media (max-width: breakpoint.$mobile)
+      /* mobile */
+      @content
+  @else if $range == tablet
+    @media (min-width: breakpoint.$mobile + 1px) and (max-width: breakpoint.$desktop - 1px)
+      /* tablet */
+      @content
+  @else if $range == tablet-portrait-only
+    @media (min-width: breakpoint.$mobile + 1px) and (max-width: breakpoint.$tablet)
+      /* tablet portrait only */
+      @content
+  @else if $range == tablet-landscape-only
+    @media (min-width: breakpoint.$tablet) and (max-width: breakpoint.$desktop - 1px)
+      /* tablet landscape only */
+      @content
+  @else if $range == desktop
+    @media (min-width: breakpoint.$desktop)
+      /* desktop */
+      @content
+
+=mobile
+  @include media-query(mobile)
+    @content
+
+=tablet
+  @include media-query(tablet)
+    @content
+
+=tablet-portrait
+  @include media-query(tablet-portrait-only)
+    @content
+
+=tablet-landscape
+  @include media-query(tablet-landscape-only)
+    @content
+
+=desktop
+  @include media-query(desktop)
+    @content
+
+
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+
+=overlay($offset: 0)
+  bottom: $offset
+  left: $offset
+  position: absolute
+  right: $offset
+  top: $offset
+
+%overlay
+  +overlay

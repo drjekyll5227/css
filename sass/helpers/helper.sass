@@ -1,0 +1,93 @@
+/* Common helpers
+ * @description  Create a common .helper--* classnames
+ * @package      helpers
+ * @version      1.0.0
+ * @lastupdate   28 May 2020 */
+
+@use '../utilities/_mixins' as mixins
+
+@include mixins.keyframes(loading-placeholder)
+  0%
+    background-position: 100% 0
+
+  100%
+    background-position: 0% 0
+
+.helper
+
+  &--has-loading-placeholder
+    animation-duration: 1s
+    animation-fill-mode: forwards
+    animation-iteration-count: infinite
+    animation-name: loading-placeholder
+    animation-timing-function: linear
+    background: linear-gradient(to right, $color-gray-two 0%, $color-gray-three 18%, $color-gray-two 33%)
+    background-size: 1000% 100%
+    height: 100%
+    overflow: hidden
+    position: relative
+    width: 100%
+
+  &--has-scroll
+    overflow: scroll
+
+  &--is-full-view-width
+    width: 100vw
+
+  &--is-full-view-height
+    height: 100vh
+
+  &--has-scroll-horizontal
+    display: flex
+    flex-flow: row nowrap
+    flex-wrap: nowrap
+    overflow-x: scroll
+
+  &--has-scroll-vertical
+    overflow-y: scroll
+
+  &--has-no-scroll
+    overflow: hidden !important // sass-lint:disable-line no-important
+
+  &--is-on-left
+    float: left
+
+  &--is-on-right
+    float: right
+
+  &--is-clearfix
+    @include mixins.clearfix
+
+  &--is-block
+    display: block
+
+  &--is-inline
+    display: inline
+
+  &--is-relative
+    position: relative
+
+  &--has-pointer
+    cursor: pointer
+
+  &--is-full-width
+    @include mixins.border-box
+    width: 100% !important // sass-lint:disable-line no-important
+
+  &--is-full-height
+    height: 100% !important // sass-lint:disable-line no-important
+
+  &--is-hidden
+    display: none !important // sass-lint:disable-line no-important
+
+  @include mixins.desktop
+    &--is-hidden-desktop
+      display: none !important // sass-lint:disable-line no-important
+
+  @include mixins.tablet
+    &--is-hidden-tablet
+      display: none !important // sass-lint:disable-line no-important
+
+  @include mixins.mobile
+    &--is-hidden-mobile
+      display: none !important // sass-lint:disable-line no-important

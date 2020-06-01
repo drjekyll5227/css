@@ -1,0 +1,178 @@
+/* Text helpers
+ * @description  Create a text .helper classnames
+ * @package      helpers
+ * @version      1.0.0
+ * @lastupdate   28 May 2020 */
+
+@use '../variables/_typograph' as typograph
+@use '../utilities/_mixins' as mixins
+
+.helper
+  &--has-text
+    &-light
+      font-weight: typograph.$weight-light
+
+    &-regular
+      font-weight: typograph.$weight-regular
+
+    &-semibold
+      font-weight: typograph.$weight-semibold
+
+    &-bold
+      font-weight: typograph.$weight-bold
+
+    &-left
+      text-align: left
+
+    &-center
+      text-align: center
+
+    &-right
+      text-align: right
+
+    &-justify
+      text-align: justify
+
+    &-capitalized
+      text-transform: capitalize
+
+    &-upper
+      text-transform: uppercase
+
+    &-lower
+      text-transform: lowercase
+
+    &-italic
+      font-style: italic
+
+    &-truncated
+      display: block
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
+
+    @include mixins.mobile
+      &-left-mobile
+        text-align: left
+
+      &-center-mobile
+        text-align: center
+
+      &-right-mobile
+        text-align: right
+
+      &-justify-mobile
+        text-align: justify
+
+    @include mixins.tablet
+      &-left-tablet
+        text-align: left
+
+      &-center-tablet
+        text-align: center
+
+      &-right-tablet
+        text-align: right
+
+      &-justify-tablet
+        text-align: justify
+
+  &--has-color
+    &-default
+      color: $color-text
+
+    &-border
+      color: $color-border
+
+    &-text
+      color: $color-text
+
+    &-white
+      color: $color-white
+
+    &-black
+      color: $color-black
+
+    &-background
+      color: $color-background
+
+    &-primary
+      color: $color-primary
+
+    &-primary-one
+      color: $color-primary-one
+
+    &-primary-two
+      color: $color-primary-two
+
+    &-primary-three
+      color: $color-primary-three
+
+    &-primary-four
+      color: $color-primary-four
+
+    &-secondary
+      color: $color-secondary
+
+    &-secondary-one
+      color: $color-secondary-one
+
+    &-secondary-two
+      color: $color-secondary-two
+
+    &-secondary-three
+      color: $color-secondary-three
+
+    &-secondary-four
+      color: $color-secondary-four
+
+    &-gray-one
+      color: $color-gray-one
+
+    &-gray-two
+      color: $color-gray-two
+
+    &-gray-three
+      color: $color-gray-three
+
+    &-gray-four
+      color: $color-gray-four
+
+    &-gray-five
+      color: $color-gray-five
+
+    &-gray-six
+      color: $color-gray-six
+
+    &-gray-seven
+      color: $color-gray-seven
+
+    &-success
+      color: $color-success
+
+    &-success-one
+      color: $color-success-one
+
+    &-success-two
+      color: $color-success-two
+
+    &-success-three
+      color: $color-success-three
+
+    &-success-four
+      color: $color-success-four
+
+    &-danger
+      color: $color-danger
+
+    &-danger-one
+      color: $color-danger-one
+
+    &-danger-two
+      color: $color-danger-two
+
+    &-danger-three
+      color: $color-danger-three
+
+    &-danger-four
+      color: $color-danger-four

@@ -1,0 +1,121 @@
+.navbar
+  $self: &
+  background-color: $color-background
+
+  &#{$self}--is-transparent
+    background-color: inherit
+
+  #{$self}__container
+    display: flex
+    flex-direction: row
+    flex-flow: row wrap
+    flex-wrap: wrap
+    padding: $size-regular $zero
+
+    +for-size(desktop)
+      margin-left: -$desktop-column-gap
+      margin-right: -$desktop-column-gap
+      width: calc(100% + #{$desktop-column-gap * 2})
+
+      .container--is-full-width
+        padding: $zero $desktop-column-gap
+
+    +for-size(tablet)
+      margin-left: -$tablet-column-gap
+      margin-right: -$tablet-column-gap
+      width: calc(100% + #{$tablet-column-gap * 2})
+
+    +for-size(mobile)
+      margin-left: -$mobile-column-gap
+      margin-right: -$mobile-column-gap
+      width: calc(100% + #{$mobile-column-gap * 2})
+
+  &#{$self}--is-fixed-top
+    left: 0
+    position: fixed
+    top: 0
+    width: 100vw
+    z-index: 1
+
+  #{$self}__logo
+    height: $navbar-content-size
+    margin-left: $desktop-column-gap
+    margin-right: $desktop-column-gap
+
+    +for-size(tablet)
+      margin-left: $tablet-column-gap
+      margin-right: $tablet-column-gap
+
+    +for-size(mobile)
+      margin-left: $mobile-column-gap
+      margin-right: $mobile-column-gap
+
+    img
+      width: auto
+      height: $navbar-content-size
+
+  #{$self}__items
+    align-items: center
+    display: flex
+    flex: auto 1 auto
+    flex-direction: row
+    height: $navbar-content-size
+    margin-left: auto
+    margin-right: $desktop-column-gap
+
+    +for-size(tablet)
+      margin-right: $tablet-column-gap
+
+    +for-size(mobile)
+      flex: 100%
+      flex-direction: column
+      height: 100%
+      margin-left: $mobile-column-gap
+      margin-right: $mobile-column-gap
+      margin-top: $size-regular
+
+    #{$self}__item
+      $item: #{$self + '__item'}
+      border-radius: $radius
+      color: $color-text
+      font-size: $text-body-two-regular-size
+      font-weight: $text-body-two-regular-weight
+      letter-spacing: $text-body-two-regular-letter-spacing
+      line-height: $text-body-two-regular-line-height
+      padding: $size-small $size-regular
+      text-align: center
+      transition: background-color $transition-low ease, color $transition-low ease
+      width: 100%
+
+      &:not(:last-child)
+        margin-right: $size-regular
+
+        +for-size(mobile)
+          margin-right: $zero
+
+      &#{$item}--is-active,
+      &:hover
+        background-color: $color-primary
+        color: $color-white
+
+  #{$self}__menu
+    -webkit-appearance: none
+    -moz-appearance: none
+    background-color: transparent
+    border-width: $zero
+    box-shadow: none
+    cursor: pointer
+    font-size: $font-size-five
+    height: 100%
+    line-height: $navbar-content-size
+    margin-left: $desktop-column-gap
+    margin-right: $desktop-column-gap
+    width: $navbar-content-size
+
+    +for-size(tablet)
+      margin-left: $tablet-column-gap
+      margin-right: $tablet-column-gap
+
+    +for-size(mobile)
+      margin-left: $mobile-column-gap
+      margin-right: $mobile-column-gap

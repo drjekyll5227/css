@@ -1,0 +1,81 @@
+.tab
+  $self: &
+  $item: #{$self + '__item'}
+  $tabs: #{$self + '__tabs'}
+  $content: #{$self + '__content'}
+  +unselectable
+
+  #{$self}__tabs
+    -ms-overflow-style: -ms-autohiding-scrollbar // sass-lint:disable-line no-vendor-prefixes
+    background: inherit
+    display: flex
+    flex-direction: row
+    height: 100%
+    overflow-x: auto
+    padding: $zero
+    scrollbar-width: none // sass-lint:disable-line no-misspelled-properties
+    width: 100%
+
+    &::-webkit-scrollbar // sass-lint:disable-line no-vendor-prefixes
+      width: 0
+
+  &#{$self}--is-vertical
+    #{$tabs}
+      flex-direction: column
+      flex-wrap: wrap
+
+      #{$item}
+        border-bottom-width: $zero
+        border-right: $tab-item-border
+        text-align: left
+
+        &#{$item}--is-active // sass-lint:disable-line nesting-depth
+          border-bottom-width: $zero
+          border-right: $tab-item-border-active
+
+  #{$tabs}
+    #{$item}
+      -moz-appearance: none // sass-lint:disable-line no-vendor-prefixes
+      -webkit-appearance: none // sass-lint:disable-line no-vendor-prefixes
+      appearance: none
+      background-color: inherit
+      border-bottom: $tab-item-border
+      border-radius: $zero
+      border-width: $zero
+      color: $tab-item-color
+      cursor: pointer
+      flex-grow: 1
+      flex-shrink: $zero
+      font-size: $font-size-three
+      font-weight: $weight-regular
+      justify-content: center
+      margin: $zero
+      min-width: $tab-item-min-width
+      outline: none !important // sass-lint:disable-line no-important
+      overflow: hidden
+      padding: $size-regular
+      position: relative
+      text-align: center
+      transition: background $transition-hover $easing, border-bottom $transition-hover $easing
+
+      &:hover
+        background-color: $tab-item-background-hover
+
+      &#{$item}--is-active
+        background: $tab-item-background-active
+        border-bottom: $tab-item-border-active
+        color: $tab-item-color-active
+        font-weight: $weight-semibold
+
+      &#{$item}--is-disable
+        background: $tab-item-background-disable
+        color: $tab-item-color-disable
+        cursor: not-allowed
+
+  #{$content}
+    display: none
+
+    &#{$content}--is-active
+      display: block
+      height: 100%
+      width: 100%

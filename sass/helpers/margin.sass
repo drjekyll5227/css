@@ -1,0 +1,249 @@
+/* Margin helpers
+ * @description  Create a margin .helper classnames
+ * @package      helpers
+ * @version      1.0.0
+ * @lastupdate   28 May 2020 */
+
+@use '../variables/_size' as size
+@use '../utilities/_mixins' as mixins
+
+.helper
+  &--has-no-margin
+    margin: size.$zero
+
+    &-left
+      margin-left: size.$zero
+
+    &-right
+      margin-right: size.$zero
+
+    &-top
+      margin-top: size.$zero
+
+    &-bottom
+      margin-bottom: size.$zero
+
+    &-vertical
+      margin-bottom: size.$zero
+      margin-top: size.$zero
+
+    &-horizontal
+      margin-left: size.$zero
+      margin-right: size.$zero
+
+  &--has-margin
+    margin: size.$regular
+
+    &-fix
+      display: inline-block
+      width: 100%
+
+    &-left
+      margin-left: size.$regular
+
+    &-right
+      margin-right: size.$regular
+
+    &-top
+      margin-top: size.$regular
+
+    &-bottom
+      margin-bottom: size.$regular
+
+    &-vertical
+      margin-bottom: size.$regular
+      margin-top: size.$regular
+
+      &-extra-small
+        margin-bottom: size.$extra-small
+        margin-top: size.$extra-small
+
+      &-small
+        margin-bottom: size.$small
+        margin-top: size.$small
+
+      &-large
+        margin-bottom: size.$large
+        margin-top: size.$large
+
+      &-extra-large
+        margin-bottom: size.$extra-large
+        margin-top: size.$extra-large
+
+    &-horizontal
+      margin-left: size.$regular
+      margin-right: size.$regular
+
+      &-extra-small
+        margin-left: size.$extra-small
+        margin-right: size.$extra-small
+
+      &-small
+        margin-left: size.$small
+        margin-right: size.$small
+
+      &-large
+        margin-left: size.$large
+        margin-right: size.$large
+
+      &-extra-large
+        margin-left: size.$extra-large
+        margin-right: size.$extra-large
+
+  @include mixins.tablet
+    &--has-no-margin
+      &-tablet
+        margin: size.$zero
+
+      &-left-tablet
+        margin-left: size.$zero
+
+      &-right-tablet
+        margin-right: size.$zero
+
+      &-top-tablet
+        margin-top: size.$zero
+
+      &-bottom-tablet
+        margin-bottom: size.$zero
+
+      &-vertical-tablet
+        margin-bottom: size.$zero
+        margin-top: size.$zero
+
+      &-horizontal-tablet
+        margin-left: size.$zero
+        margin-right: size.$zero
+
+    &--has-margin
+      &-tablet
+        margin: size.$regular
+
+      &-left-tablet
+        margin-left: size.$regular
+
+      &-right-tablet
+        margin-right: size.$regular
+
+      &-top-tablet
+        margin-top: size.$regular
+
+      &-bottom-tablet
+        margin-bottom: size.$regular
+
+      &-vertical
+        &-extra-small-tablet
+          margin-bottom: size.$extra-small
+          margin-top: size.$extra-small
+
+        &-small-tablet
+          margin-bottom: size.$small
+          margin-top: size.$small
+
+        &-large-tablet
+          margin-bottom: size.$large
+          margin-top: size.$large
+
+        &-extra-large-tablet
+          margin-bottom: size.$extra-large
+          margin-top: size.$extra-large
+
+      &-horizontal
+        &-extra-small-tablet
+          margin-left: size.$extra-small
+          margin-right: size.$extra-small
+
+        &-small-tablet
+          margin-left: size.$small
+          margin-right: size.$small
+
+        &-large-tablet
+          margin-left: size.$large
+          margin-right: size.$large
+
+        &-extra-large-tablet
+          margin-left: size.$extra-large
+          margin-right: size.$extra-large
+
+  @include mixins.mobile
+    &--has-no-margin
+      &-mobile
+        margin: size.$zero
+
+      &-left-mobile
+        margin-left: size.$zero
+
+      &-right-mobile
+        margin-right: size.$zero
+
+      &-top-mobile
+        margin-top: size.$zero
+
+      &-bottom-mobile
+        margin-bottom: size.$zero
+
+      &-vertical-mobile
+        margin-bottom: size.$zero
+        margin-top: size.$zero
+
+      &-horizontal-mobile
+        margin-left: size.$zero
+        margin-right: size.$zero
+
+    &--has-margin
+      &-mobile
+        margin: size.$regular
+
+      &-left-mobile
+        margin-left: size.$regular
+
+      &-right-mobile
+        margin-right: size.$regular
+
+      &-top-mobile
+        margin-top: size.$regular
+
+      &-bottom-mobile
+        margin-bottom: size.$regular
+
+      &-vertical
+        &-mobile
+          margin-bottom: size.$regular
+          margin-top: size.$regular
+
+        &-extra-small-mobile
+          margin-bottom: size.$extra-small
+          margin-top: size.$extra-small
+
+        &-small-mobile
+          margin-bottom: size.$small
+          margin-top: size.$small
+
+        &-large-mobile
+          margin-bottom: size.$large
+          margin-top: size.$large
+
+        &-extra-large-mobile
+          margin-bottom: size.$extra-large
+          margin-top: size.$extra-large
+
+      &-horizontal
+        &-mobile
+          margin-left: size.$regular
+          margin-right: size.$regular
+
+        &-extra-small-mobile
+          margin-left: size.$extra-small
+          margin-right: size.$extra-small
+
+        &-small-mobile
+          margin-left: size.$small
+          margin-right: size.$small
+
+        &-large-mobile
+          margin-left: size.$large
+          margin-right: size.$large
+
+        &-extra-large-mobile
+          margin-left: size.$extra-large
+          margin-right: size.$extra-large

@@ -1,0 +1,67 @@
+@use '../../utilities/_mixins' as mixins
+
+.grid
+  $row: '.grid__row'
+  $column: '.grid__column'
+
+  &__row
+    -ms-overflow-style: -ms-autohiding-scrollbar // sass-lint:disable-line no-vendor-prefixes
+    display: flex
+    flex-direction: row
+    flex-flow: row wrap
+    flex-wrap: wrap
+    height: max-content
+    margin-left: -$mobile-column-gap
+    margin-right: -$mobile-column-gap
+    scrollbar-width: none // sass-lint:disable-line no-misspelled-properties
+
+    @include mixins.desktop
+      margin-left: -$desktop-column-gap
+      margin-right: -$desktop-column-gap
+
+    @include mixins.tablet
+      margin-left: -$tablet-column-gap
+      margin-right: -$tablet-column-gap
+
+    &::-webkit-scrollbar // sass-lint:disable-line no-vendor-prefixes
+      width: 0
+
+    &#{$row}--is-reverse
+      flex-direction: row-reverse
+
+  &__column
+    flex: auto
+    height: fit-content
+    margin-left: $mobile-column-gap
+    margin-right: $mobile-column-gap
+
+    @each $name, $count in $percentages
+      &#{$column}--is-#{$name}
+        max-width: calc(#{$count} - #{$mobile-column-gap * 2})
+        width: $count
+
+    @include mixins.tablet
+      margin-left: $tablet-column-gap
+      margin-right: $tablet-column-gap
+
+      @each $name, $count in $percentages
+        &#{$column}--is-#{$name}
+          max-width: calc(#{$count} - #{$tablet-column-gap * 2})
+          width: $count
+
+        &#{$column}--is-#{$name}-tablet
+          max-width: calc(#{$count} - #{$tablet-column-gap * 2})
+          width: $count
+
+    @include mixins.desktop
+      margin-left: $desktop-column-gap
+      margin-right: $desktop-column-gap
+
+      @each $name, $count in $percentages
+        &#{$column}--is-#{$name}
+          max-width: calc(#{$count} - #{$desktop-column-gap * 2})
+          width: $count
+
+        &#{$column}--is-#{$name}-desktop
+          max-width: calc(#{$count} - #{$desktop-column-gap * 2})
+          width: $count

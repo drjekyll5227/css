@@ -1,0 +1,32 @@
+@import '../../variables/hero'
+@import '../../variables/navbar'
+
+.hero
+  $self: &
+  background-color: $color-gray-two
+  border-radius: $radius
+  height: 100vh
+  overflow: hidden
+  width: 100%
+
+  &#{$self}--has-navbar
+    height: calc(100vh - #{$navbar-height})
+
+  &#{$self}--has-no-radius
+    border-radius: $zero
+
+  &#{$self}--is-auto
+    height: auto
+
+  &#{$self}--is-extra-small
+    height: $hero-height-extra-small
+
+  &#{$self}--is-small
+    height: $hero-height-small
+
+  &#{$self}--is-large
+    height: $hero-height-large
+
+  &#{$self}--is-extra-large
+    height: $hero-height-extra-large
+
