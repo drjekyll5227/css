@@ -19,11 +19,20 @@ If you've made it this far, **thank you**! We appreciate your contribution, and 
         <sub>Author</sub>
       </a>
     </td>
-     <td align="center">
+    <td align="center">
       <a href="https://github.com/niltonslf">
         <img src="https://avatars0.githubusercontent.com/u/6744730?v=4" width="80px;" alt="Nilton Lopes"/>
         <br />
         <strong>Nilton Lopes</strong>
+        <br />
+        <sub>Contributor</sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/carlosgui">
+        <img src="https://avatars0.githubusercontent.com/u/58825326?v=4" width="80px;" alt="Carlos Guimarães"/>
+        <br />
+        <strong>Carlos Guimarães</strong>
         <br />
         <sub>Contributor</sub>
       </a>

@@ -1,15 +1,17 @@
+@import '../../variables/size'
+
 .badge
   $self: &
   background-color: map-get($badge-background, default)
   border: solid 1px map-get($badge-border, default)
-  border-radius: $radius
+  border-radius: $badge-border-radius
   color: map-get($badge-color, default)
   cursor: default
   display: inline
-  font-size: calc(100% - #{$size-extra-small + 1})
+  font-size: $badge-font-size
   line-height: 1
-  margin: auto #{$size-regular / 2}
-  padding: $size-extra-small $size-small
+  margin: $badge-margin
+  padding: $badge-padding
   white-space: nowrap
   word-wrap: nowrap
 
@@ -17,15 +19,15 @@
     text-transform: none
 
   &:last-of-type
-    margin-right: $zero
+    margin-right: $size-zero
 
   &:first-of-type
-    margin-left: $zero
+    margin-left: $size-zero
 
   &#{$self}--is-pill
-    border-radius: $font-size-one
-    min-width: 20px
-    padding: $size-extra-small
+    border-radius: $badge-pill-border-radius
+    min-width: $badge-pill-min-width
+    padding: $badge-pill-padding
 
   &#{$self}--is-outline
     background-color: map-get($badge-outline-background, default)
@@ -35,8 +37,8 @@
   &#{$self}--is-floating
     cursor: inherit
     position: absolute
-    right: -#{$base}
-    top: -#{$base}
+    right: $badge-floating-right
+    top: $badge-floating-top
 
   @each $color, $value in $badge-background
     &#{$self}--is-#{ $color }
