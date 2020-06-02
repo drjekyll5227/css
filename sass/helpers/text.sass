@@ -4,22 +4,22 @@
  * @version      1.0.0
  * @lastupdate   28 May 2020 */
 
-@use '../variables/_typograph' as typograph
-@use '../utilities/_mixins' as mixins
+@import '../variables/typograph'
+@import '../utilities/mixins'
 
 .helper
   &--has-text
     &-light
-      font-weight: typograph.$weight-light
+      font-weight: $typograph-weight-light
 
     &-regular
-      font-weight: typograph.$weight-regular
+      font-weight: $typograph-weight-regular
 
     &-semibold
-      font-weight: typograph.$weight-semibold
+      font-weight: $typograph-weight-semibold
 
     &-bold
-      font-weight: typograph.$weight-bold
+      font-weight: $typograph-weight-bold
 
     &-left
       text-align: left
@@ -51,7 +51,7 @@
       text-overflow: ellipsis
       white-space: nowrap
 
-    @include mixins.mobile
+    +mobile
       &-left-mobile
         text-align: left
 
@@ -64,7 +64,7 @@
       &-justify-mobile
         text-align: justify
 
-    @include mixins.tablet
+    +tablet
       &-left-tablet
         text-align: left
 

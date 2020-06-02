@@ -4,9 +4,9 @@
  * @version      1.0.0
  * @lastupdate   28 May 2020 */
 
-@use '../utilities/_mixins' as mixins
+@use '../utilities/mixins'
 
-@include mixins.keyframes(loading-placeholder)
++keyframes(loading-placeholder)
   0%
     background-position: 100% 0
 
@@ -56,7 +56,7 @@
     float: right
 
   &--is-clearfix
-    @include mixins.clearfix
+    +clearfix
 
   &--is-block
     display: block
@@ -71,7 +71,6 @@
     cursor: pointer
 
   &--is-full-width
-    @include mixins.border-box
     width: 100% !important // sass-lint:disable-line no-important
 
   &--is-full-height
@@ -80,14 +79,14 @@
   &--is-hidden
     display: none !important // sass-lint:disable-line no-important
 
-  @include mixins.desktop
+  +desktop
     &--is-hidden-desktop
       display: none !important // sass-lint:disable-line no-important
 
-  @include mixins.tablet
+  +tablet
     &--is-hidden-tablet
       display: none !important // sass-lint:disable-line no-important
 
-  @include mixins.mobile
+  +mobile
     &--is-hidden-mobile
       display: none !important // sass-lint:disable-line no-important

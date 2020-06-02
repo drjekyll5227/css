@@ -4,22 +4,22 @@
  * @version      1.0.0
  * @lastupdate   28 May 2020 */
 
-@use '../variables/_size' as size
-@use '../variables/_border' as border
+@import '../variables/size'
+@import '../variables/border'
 
 .helper
 
   &--has-no-border
-    border-width: size.$zero
+    border-width: $size-zero
 
   &--has-border-double
-    border-width: border.$border-width * 2
+    border-width: $border-width * 2
 
   &--has-border-dashed
     border-style: dashed
 
   &--has-border
-    border: solid border.$border-width $color-border
+    border: solid $border-width $color-border
 
   &--has-border-color
     &-default

@@ -1,9 +1,9 @@
-@use '../../variables/_size' as size
-@use '../../variables/_border' as border
-@use '../../variables/_transition' as transition
+@import '../../variables/size'
+@import '../../variables/border'
+@import '../../variables/transition'
 
-$alert-transition:          background-color transition.$transition transition.$easing, color transition.$transition transition.$easing
-$alert-gap:                 size.$regular
-$alert-margin:              size.$zero
-$alert-nesting-margin-top:  size.$regular
-$alert-border-radius:       border.$radius
+$alert-transition:          background-color $transition-time $transition-easing, color $transition-time $transition-easing
+$alert-gap:                 $size-regular
+$alert-margin:              $size-zero
+$alert-nesting-margin-top:  $size-regular
+$alert-border-radius:       $border-radius

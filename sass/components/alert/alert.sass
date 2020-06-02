@@ -1,4 +1,4 @@
-@use '../../variables/_size' as size
+@import '../../variables/size'
 
 .alert
   $self: &
@@ -33,16 +33,16 @@
 
   #{$self}__close
     background-color: transparent
-    border-width: size.$zero
+    border-width: $size-zero
     box-shadow: none
     content: '×'
     cursor: pointer
     font-size: 20px
     font-weight: 600
     line-height: 1
-    margin: size.$zero size.$zero size.$zero size.$regular
+    margin: $size-zero $size-zero $size-zero $size-regular
     outline: none
-    padding: size.$zero
+    padding: $size-zero
 
   @each $color, $value in $alert-background
     &#{$self}--is-#{ $color }

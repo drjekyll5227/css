@@ -1,4 +1,4 @@
-@use '../variables/_breakpoint' as breakpoint
+@import '../variables/breakpoint'
 
 =clearfix
   &::after
@@ -55,23 +55,23 @@
 
 =media-query($range)
   @if $range == mobile
-    @media (max-width: breakpoint.$mobile)
+    @media (max-width: $breakpoint-mobile)
       /* mobile */
       @content
   @else if $range == tablet
-    @media (min-width: breakpoint.$mobile + 1px) and (max-width: breakpoint.$desktop - 1px)
+    @media (min-width: $breakpoint-mobile + 1px) and (max-width: $breakpoint-desktop - 1px)
       /* tablet */
       @content
   @else if $range == tablet-portrait-only
-    @media (min-width: breakpoint.$mobile + 1px) and (max-width: breakpoint.$tablet)
+    @media (min-width: $breakpoint-mobile + 1px) and (max-width: $breakpoint-tablet)
       /* tablet portrait only */
       @content
   @else if $range == tablet-landscape-only
-    @media (min-width: breakpoint.$tablet) and (max-width: breakpoint.$desktop - 1px)
+    @media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop - 1px)
       /* tablet landscape only */
       @content
   @else if $range == desktop
-    @media (min-width: breakpoint.$desktop)
+    @media (min-width: $breakpoint-desktop)
       /* desktop */
       @content
 

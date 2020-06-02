@@ -1,11 +1,10 @@
-@use '../../utilities/_mixins' as mixins
-@use '../../variables/_size' as size
+@import '../../variables/size'
 
 .container
   $self: &
   height: 100%
-  margin: size.$zero auto
-  padding: size.$zero
+  margin: $size-zero auto
+  padding: $size-zero
   width: 100%
 
   &#{$self}--has-sidebar
@@ -17,16 +16,16 @@
       flex: 1 1
       height: max-content
 
-  @include mixins.mobile
+  +mobile
     max-width: $container-mobile
 
-  @include mixins.tablet-portrait
+  +tablet-portrait
     max-width: $container-tablet-portrait
 
-  @include mixins.tablet-landscape
+  +tablet-landscape
     max-width: $container-tablet-landscape
 
-  @include mixins.desktop
+  +desktop
     max-width: $container-desktop
 
   &#{$self}--is-full-width

@@ -1,21 +1,21 @@
-@use '../variables/_typograph' as typograph
-@use '../variables/_size' as size
-@use '../variables/_border' as border
-@use '../variables/_transition' as transition
-@use '../utilities/_mixins' as mixins
-@use '../vendors/reset.css'
+@import '../variables/_typograph'
+@import '../variables/_size'
+@import '../variables/_border'
+@import '../variables/_transition'
+@import '../utilities/_mixins'
+@import '../vendors/reset'
 
 $body-min-width:              100vw !default
 $body-rendering:              optimizeLegibility !default
 $body-overflow-x:             hidden !default
 $body-overflow-y:             scroll !default
-$list-nesting-margin-left:    size.$regular !default
-$list-nesting-margin-right:   size.$zero !default
+$list-nesting-margin-left:    $size-regular !default
+$list-nesting-margin-right:   $size-zero !default
 $content:                     ' ' !default
 
-@include mixins.placeholder
-  opacity: size.$zero
-  transition: #{transition.$transition} ease opacity
++placeholder
+  opacity: $size-zero
+  transition: opacity $transition-time $transition-easing
 
 html
   -moz-osx-font-smoothing: grayscale // sass-lint:disable-line no-vendor-prefixes
@@ -30,17 +30,17 @@ html
   box-sizing: inherit
 
 body
-  @include mixins.border-box
+  +border-box
   background-color: $color-background
   color: $color-text
-  font-family: typograph.$family-sans-serif
-  font-size: typograph.$body-one-regular-size
-  font-weight: typograph.$body-one-regular-weight
-  letter-spacing: typograph.$body-one-regular-letter-spacing
-  line-height: typograph.$body-one-regular-line-height
-  margin: size.$zero
+  font-family: $typograph-family-sans-serif
+  font-size: $typograph-body-one-regular-size
+  font-weight: $typograph-body-one-regular-weight
+  letter-spacing: $typograph-body-one-regular-letter-spacing
+  line-height: $typograph-body-one-regular-line-height
+  margin: $size-zero
   overflow-x: hidden
-  padding: size.$zero
+  padding: $size-zero
 
 span,
 small,
@@ -52,7 +52,7 @@ code,
 pre
   -moz-osx-font-smoothing: auto // sass-lint:disable-line no-vendor-prefixes
   -webkit-font-smoothing: auto // sass-lint:disable-line no-vendor-prefixes
-  font-family: typograph.$family-monospace
+  font-family: $typograph-family-monospace
 
 a,
 .link
@@ -73,7 +73,7 @@ a,
 
   &.link--is-active
     color: $link-color-active !important
-    font-weight: typograph.$weight-semibold
+    font-weight: $typograph-weight-semibold
     pointer-events: none
 
   &.link--is-visited,
@@ -81,9 +81,9 @@ a,
     color: $link-color-visited
 
 hr
-  @include mixins.clearfix
+  +clearfix
   box-sizing: content-box
-  height: size.$zero
+  height: $size-zero
   overflow: auto
 
 img
@@ -109,24 +109,24 @@ input
   &[type='url'],
   &[type='password']
     &:focus
-      outline: size.$zero
+      outline: $size-zero
 
 small
   color: currentColor
-  font-size: typograph.$body-one-regular-size
-  font-weight: typograph.$body-one-regular-weight
-  letter-spacing: typograph.$body-one-regular-letter-spacing
-  line-height: typograph.$body-one-regular-line-height
+  font-size: $typograph-body-one-regular-size
+  font-weight: $typograph-body-one-regular-weight
+  letter-spacing: $typograph-body-one-regular-letter-spacing
+  line-height: $typograph-body-one-regular-line-height
 
 span
   font-style: inherit
   font-weight: inherit
 
 strong
-  font-weight: typograph.$weight-bold
+  font-weight: $typograph-weight-bold
 
 fieldset
-  border-width: size.$zero
+  border-width: $size-zero
 
 h1,
 h2,
@@ -135,92 +135,92 @@ h4,
 h5,
 h6,
 p
-  @include mixins.border-box
-  @include mixins.clearfix
+  +border-box
+  +clearfix
   color: currentColor
   display: inline-block
-  margin: size.$zero
-  padding: size.$zero
+  margin: $size-zero
+  padding: $size-zero
   width: 100%
 
 
 h1
-  font-size: typograph.$heading-one-desktop-size
-  font-weight: typograph.$weight-light
-  letter-spacing: typograph.$heading-one-desktop-letter-spacing
-  line-height: typograph.$heading-one-desktop-line-height
-  min-height: typograph.$heading-one-desktop-line-height
+  font-size: $typograph-heading-one-desktop-size
+  font-weight: $typograph-weight-light
+  letter-spacing: $typograph-heading-one-desktop-letter-spacing
+  line-height: $typograph-heading-one-desktop-line-height
+  min-height: $typograph-heading-one-desktop-line-height
 
   &.h1--is-hero
-    font-size: typograph.$heading-one-hero-desktop-size
-    letter-spacing: typograph.$heading-one-hero-desktop-letter-spacing
-    line-height: typograph.$heading-one-hero-desktop-line-height
-    min-height: typograph.$heading-one-hero-desktop-line-height
+    font-size: $typograph-heading-one-hero-desktop-size
+    letter-spacing: $typograph-heading-one-hero-desktop-letter-spacing
+    line-height: $typograph-heading-one-hero-desktop-line-height
+    min-height: $typograph-heading-one-hero-desktop-line-height
 
-  @include mixins.media-query(mobile)
-    font-size: typograph.$heading-one-mobile-size
-    letter-spacing: typograph.$heading-one-mobile-letter-spacing
-    line-height: typograph.$heading-one-mobile-line-height
-    min-height: typograph.$heading-one-mobile-line-height
+  +media-query(mobile)
+    font-size: $typograph-heading-one-mobile-size
+    letter-spacing: $typograph-heading-one-mobile-letter-spacing
+    line-height: $typograph-heading-one-mobile-line-height
+    min-height: $typograph-heading-one-mobile-line-height
 
     &.h2--is-hero
-      font-size: typograph.$heading-one-hero-mobile-size
-      letter-spacing: typograph.$heading-one-hero-mobile-letter-spacing
-      line-height: typograph.$heading-one-hero-mobile-line-height
-      min-height: typograph.$heading-one-hero-mobile-line-height
+      font-size: $typograph-heading-one-hero-mobile-size
+      letter-spacing: $typograph-heading-one-hero-mobile-letter-spacing
+      line-height: $typograph-heading-one-hero-mobile-line-height
+      min-height: $typograph-heading-one-hero-mobile-line-height
 
 h2
-  font-size: typograph.$heading-two-desktop-size
-  font-weight: typograph.$weight-light
-  letter-spacing: typograph.$heading-two-desktop-letter-spacing
-  line-height: typograph.$heading-two-desktop-line-height
-  min-height: typograph.$heading-two-desktop-line-height
+  font-size: $typograph-heading-two-desktop-size
+  font-weight: $typograph-weight-light
+  letter-spacing: $typograph-heading-two-desktop-letter-spacing
+  line-height: $typograph-heading-two-desktop-line-height
+  min-height: $typograph-heading-two-desktop-line-height
 
-  @include mixins.media-query(mobile)
-    font-size: typograph.$heading-two-mobile-size
-    letter-spacing: typograph.$heading-two-mobile-letter-spacing
-    line-height: typograph.$heading-two-mobile-line-height
-    min-height: typograph.$heading-two-mobile-line-height
+  +media-query(mobile)
+    font-size: $typograph-heading-two-mobile-size
+    letter-spacing: $typograph-heading-two-mobile-letter-spacing
+    line-height: $typograph-heading-two-mobile-line-height
+    min-height: $typograph-heading-two-mobile-line-height
 
 h3
-  font-size: typograph.$heading-three-desktop-size
-  font-weight: typograph.$weight-light
-  letter-spacing: typograph.$heading-three-desktop-letter-spacing
-  line-height: typograph.$heading-three-desktop-line-height
-  min-height: typograph.$heading-three-desktop-line-height
+  font-size: $typograph-heading-three-desktop-size
+  font-weight: $typograph-weight-light
+  letter-spacing: $typograph-heading-three-desktop-letter-spacing
+  line-height: $typograph-heading-three-desktop-line-height
+  min-height: $typograph-heading-three-desktop-line-height
 
-  @include mixins.media-query(mobile)
-    font-size: typograph.$heading-three-mobile-size
-    letter-spacing: typograph.$heading-three-mobile-letter-spacing
-    line-height: typograph.$heading-three-mobile-line-height
-    min-height: typograph.$heading-three-mobile-line-height
+  +media-query(mobile)
+    font-size: $typograph-heading-three-mobile-size
+    letter-spacing: $typograph-heading-three-mobile-letter-spacing
+    line-height: $typograph-heading-three-mobile-line-height
+    min-height: $typograph-heading-three-mobile-line-height
 
 h4
-  font-size: typograph.$heading-four-size
-  font-weight: typograph.$weight-light
-  letter-spacing: typograph.$heading-four-letter-spacing
-  line-height: typograph.$heading-four-line-height
-  min-height: typograph.$heading-four-line-height
+  font-size: $typograph-heading-four-size
+  font-weight: $typograph-weight-light
+  letter-spacing: $typograph-heading-four-letter-spacing
+  line-height: $typograph-heading-four-line-height
+  min-height: $typograph-heading-four-line-height
 
 h5
-  font-size: typograph.$heading-five-size
-  font-weight: typograph.$weight-light
-  letter-spacing: typograph.$heading-five-letter-spacing
-  line-height: typograph.$heading-five-line-height
-  min-height: typograph.$heading-five-line-height
+  font-size: $typograph-heading-five-size
+  font-weight: $typograph-weight-light
+  letter-spacing: $typograph-heading-five-letter-spacing
+  line-height: $typograph-heading-five-line-height
+  min-height: $typograph-heading-five-line-height
 
 p
-  font-size: typograph.$body-one-regular-size
-  font-weight: typograph.$body-one-regular-weight
-  letter-spacing: typograph.$body-one-regular-letter-spacing
-  line-height: typograph.$body-one-regular-line-height
-  min-height: typograph.$body-one-regular-line-height
+  font-size: $typograph-body-one-regular-size
+  font-weight: $typograph-body-one-regular-weight
+  letter-spacing: $typograph-body-one-regular-letter-spacing
+  line-height: $typograph-body-one-regular-line-height
+  min-height: $typograph-body-one-regular-line-height
 
 pre
-  @include mixins.clearfix
-  margin: size.$zero !important // sass-lint:disable-line no-important
+  +clearfix
+  margin: $size-zero !important // sass-lint:disable-line no-important
   overflow-x: auto
-  padding: size.$regular !important // sass-lint:disable-line no-important
+  padding: $size-regular !important // sass-lint:disable-line no-important
   white-space: pre
   word-wrap: normal
 
@@ -231,12 +231,12 @@ pre
 .code
   background-color: $code-background
   border: solid 1px $code-border
-  border-radius: border.$radius
+  border-radius: $border-radius
   color: $color-text
   display: inline-block
-  font-size: typograph.$font-size-one
+  font-size: $typograph-font-size-one
   line-height: 1
-  padding: size.$extra-small
+  padding: $size-extra-small
   white-space: nowrap
 
 table
@@ -254,8 +254,8 @@ svg
 
 ul
   list-style: circle inside
-  margin: size.$zero
-  padding: size.$zero
+  margin: $size-zero
+  padding: $size-zero
 
   &[dir=rtl]
     ul,
@@ -265,8 +265,8 @@ ul
 
 ol
   list-style: decimal inside
-  margin: size.$zero
-  padding: size.$zero
+  margin: $size-zero
+  padding: $size-zero
 
   ul,
   ol

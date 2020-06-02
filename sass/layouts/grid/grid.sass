@@ -1,4 +1,4 @@
-@use '../../utilities/_mixins' as mixins
+@import '../../utilities/mixins'
 
 .grid
   $row: '.grid__row'
@@ -15,11 +15,11 @@
     margin-right: -$mobile-column-gap
     scrollbar-width: none // sass-lint:disable-line no-misspelled-properties
 
-    @include mixins.desktop
+    +desktop
       margin-left: -$desktop-column-gap
       margin-right: -$desktop-column-gap
 
-    @include mixins.tablet
+    +tablet
       margin-left: -$tablet-column-gap
       margin-right: -$tablet-column-gap
 
@@ -40,7 +40,7 @@
         max-width: calc(#{$count} - #{$mobile-column-gap * 2})
         width: $count
 
-    @include mixins.tablet
+    +tablet
       margin-left: $tablet-column-gap
       margin-right: $tablet-column-gap
 
@@ -53,7 +53,7 @@
           max-width: calc(#{$count} - #{$tablet-column-gap * 2})
           width: $count
 
-    @include mixins.desktop
+    +desktop
       margin-left: $desktop-column-gap
       margin-right: $desktop-column-gap
 
