@@ -42,7 +42,12 @@ You can import individual Cavilha components directly from the `@cavilha-ui/css`
 ```
 
 ## Development
+
 See [DEVELOP.md](./DEVELOP.md) for development docs.
+
+## Team
+
+See [TEAM.md](./TEAM.md).
 
 ## License
 
@@ -53,24 +58,3 @@ See [DEVELOP.md](./DEVELOP.md) for development docs.
 [npm]: https://www.npmjs.com/
 [cavilha]: https://www.npmjs.com/package/@cavilha-ui/css
 [sass]: http://sass-lang.com/
-
-# Author
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/williamnvk">
-        <img src="https://avatars0.githubusercontent.com/u/2616847?v=4" width="80px;" alt="William Novak"/>
-        <br />
-        <sub>William Novak</sub>
-      </a>
-    </td>
-  </tr>
-</table>
-
-<!-- markdownlint-enable -->
-<!-- prettier-ignore-end -->
-<!-- ALL-CONTRIBUTORS-LIST:END -->
