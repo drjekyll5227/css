@@ -1,19 +1,15 @@
-@import '../../variables/hero'
-@import '../../variables/navbar'
+@import '../../variables/size'
 
 .hero
   $self: &
   background-color: $color-gray-two
-  border-radius: $radius
+  border-radius: $hero-border-radius
   height: 100vh
   overflow: hidden
   width: 100%
 
-  &#{$self}--has-navbar
-    height: calc(100vh - #{$navbar-height})
-
   &#{$self}--has-no-radius
-    border-radius: $zero
+    border-radius: $size-zero
 
   &#{$self}--is-auto
     height: auto
