@@ -1,37 +1,49 @@
+@import '../../variables/transition'
+@import '../../variables/size'
+
+a.card
+  transition: margin-top $transition-time $transition-easing
+  text-transform: none
+
+  &:hover
+    margin-top: $card-margin-hover
+
 .card
   $self: &
   +shadow
   background-color: $card-background
-  border-radius: $radius
+  border-radius: $card-border-radius
   height: 100%
   overflow: hidden
 
   &#{$self}--has-no-radius
-    border-radius: $zero
+    border-radius: $size-zero
 
-  &#{$self}--has-no-shadow
-    box-shadow: none
+  &--has-no-elevation
+    box-shadow: none !important // sass-lint:disable-line no-important
 
-  &#{$self}--has-shadow-extra-small
+  &--has-elevation-extra-small
     +shadow-extra-small
 
-  &#{$self}--has-shadow-small
+  &--has-elevation-small
     +shadow-small
 
-  &#{$self}--has-shadow-large
+  &--has-elevation
+    +shadow
+
+  &--has-elevation-large
     +shadow-large
 
-  &#{$self}--has-shadow-extra-large
+  &--has-elevation-extra-large
     +shadow-extra-large
 
   #{$self}__header
-    +clearfix
+    padding: $card-header-gap
 
   #{$self}__content
-    +clearfix
-    padding: $size-regular
+    padding: $card-content-gap
 
   #{$self}__footer
-    padding: $size-regular
+    padding: $card-footer-gap
 
 
