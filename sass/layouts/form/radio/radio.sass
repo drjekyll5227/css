@@ -1,0 +1,67 @@
+@import '../../../variables/size'
+@import '../../../variables/typograph'
+@import '../../../utilities/mixins'
+
+.radio
+  $self: &
+  +unselectable
+  display: inline-flex
+  position: relative
+  cursor: pointer
+  padding-left: 36px
+  position: relative
+  margin-right: $radio-margin-right
+
+  &:last-of-type
+    margin-right: $size-zero
+
+  &:hover
+    #{$self}__marker
+      background: $input-marker-background-hover
+
+  #{$self}__text
+    font-size: $radio-text-font-size
+    font-weight: $radio-text-weight
+    line-height: $radio-text-line-height
+    display: block
+
+  #{$self}__marker
+    background-color: $input-marker-background
+    border: $radio-marker-border
+    border-radius: $radio-marker-border-radius
+    height: $radio-marker-width
+    left: $size-zero
+    position: absolute
+    top: $size-zero
+    width: $radio-marker-height
+
+    &:after // sass-lint:disable-line pseudo-element
+      content: ' '
+      display: none
+      position: absolute
+      background: inherit
+      border: solid $color-secondary
+      border-width: $radio-marker-content-border
+      height: $radio-marker-content-height
+      left: $radio-marker-content-left
+      top: $radio-marker-content-top
+      transform: rotate(45deg)
+      width: $radio-marker-content-width
+
+  input[type='radio']
+    cursor: pointer
+    opacity: $size-zero
+    position: absolute
+
+    &:checked + #{$self}__marker
+      background-color: $input-marker-background
+      border-color: $color-secondary
+
+      &::after // sass-lint:disable-line pseudo-element nesting-depth
+        display: block
+
+      &:hover // sass-lint:disable-line nesting-depth
+        background-color: $input-marker-background-hover
+
+      &+ #{$self}__text // sass-lint:disable-line nesting-depth
+        font-weight: $typograph-weight-bold
